@@ -1,32 +1,31 @@
-#include <stdio.h>
-#include <string.h>
+#include <cstdio>
+#include <cstring>
 
 int main()
 {
-	int n;
-	scanf("%d", &n);
-	while(n--)
-	{
-		char word[100];
-		scanf("%s",word);
-	 	int len = strlen(word);
-		for(int i=1; i<=len; i++)
-			if(len % i == 0)
-			{
-				int ok = 1;
-				for(int j = i; j<len; j++)
-					if(word[j] != word[j%i]) 
-					{
-						ok = 0;
-						break;
-					}
-				if(ok)
-				{
-					printf("%d\n", i);
-					break;
-		   			if(n)printf("\n");
-				}
-			}
-	}
- 	return 0;
+#ifdef LOCAL 
+    freopen("in", "r", stdin);
+#endif
+    int n;
+    scanf("%d", &n);
+    char s[100];
+    while(n--)
+    {
+        scanf("%s", s);
+        int len = strlen(s);
+        for(int i = 1; i <= len; i++)
+            if(len % i == 0)
+            {
+                int k;
+                for(k = i; k < len; k++)
+                    if(s[k] != s[k%i])   break;
+                if(k == len)
+                {
+                    printf("%d\n", i);
+                    if(n)   printf("\n");
+                    break;
+                }
+            }
+    }
+    return 0;
 }
