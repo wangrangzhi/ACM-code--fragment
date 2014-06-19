@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <string.h>
-const int maxn = 3000;
+const int maxn = 10010;
 int f[maxn];
 
 int main()
