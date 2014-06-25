@@ -82,7 +82,7 @@ read_to_first_identifier()
 		gettoken();
 	}
 
-	printf("%s is", this.string);
+	printf(" %s is", this.string);
 	gettoken();
 }
 
@@ -90,15 +90,15 @@ deal_with_arrays()
 {
 	while(this.type=='[')
 	{
-		printf("array ");
+		printf(" array ");
 		gettoken();
 		if(isdigit(this.string[0]))
 		{
-			printf("0..%d ", atoi(this.string)-1);
+			printf(" 0..%d ", atoi(this.string)-1);
 			gettoken();
 		}
 		gettoken();
-		printf("0f ");
+		printf(" 0f ");
 	}
 }
 
@@ -110,14 +110,14 @@ deal_with_function_args()
 	}
 
 	gettoken();
-	printf("function returning ");
+	printf(" function returning ");
 }
 
 deal_with_pointers()
 {
 	while(stack[top].type == '*')
 	{
-		printf("%s", pop.string );
+		printf(" %s", pop.string );
 	}
 }
 
@@ -140,7 +140,7 @@ deal_with_declarator()
 			deal_with_declarator();
 		}else
 		{
-			printf("%s ", pop.string);
+			printf(" %s ", pop.string);
 		}
 	}
 }
