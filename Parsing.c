@@ -82,7 +82,7 @@ read_to_first_identifier()
 		gettoken();
 	}
 
-	printf(" %s is", this.string);
+	printf(" -%s is", this.string);
 	gettoken();
 }
 
