@@ -1,13 +1,10 @@
 #include <stdio.h>
-
+#include <stdlib.h>
 int main(){
-	char q = 'a';
-	char* p = &q;
-	printf("%d", p);
 	
-	int apple;
-	apple = sizeof (int) * p;
-	printf("%d %d", sizeof(apple), apple);
+	int Mb = 0;
+	while(malloc(1<<20)) ++Mb;
+	printf("Allocated %d kb total\n", Mb);
 	
 	return 0;	
 }
